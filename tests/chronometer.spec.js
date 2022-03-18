@@ -168,19 +168,19 @@ describe('Chronometer', () => {
       expect(typeof chronometer.split).toEqual('function');
     });
 
-    it('should return valid format with minutes and seconds', () => {
+    it('should return valid format with minutes, seconds and miliseconds', () => {
       chronometer.currentTime = 5;
-      expect(chronometer.split()).toEqual(`00:05`);
+      expect(chronometer.split()).toEqual(`00:05:00`);
       chronometer.currentTime = 17;
-      expect(chronometer.split()).toEqual(`00:17`);
+      expect(chronometer.split()).toEqual(`00:17:00`);
       chronometer.currentTime = 60;
-      expect(chronometer.split()).toEqual(`01:00`);
+      expect(chronometer.split()).toEqual(`01:00:00`);
       chronometer.currentTime = 135;
-      expect(chronometer.split()).toEqual(`02:15`);
+      expect(chronometer.split()).toEqual(`02:15:00`);
       chronometer.currentTime = 135;
-      expect(chronometer.split()).toEqual(`02:15`);
+      expect(chronometer.split()).toEqual(`02:15:00`);
       chronometer.currentTime = 800;
-      expect(chronometer.split()).toEqual(`13:20`);
+      expect(chronometer.split()).toEqual(`13:20:00`);
     });
 
     // If you decide to work on the bonus iteration,
